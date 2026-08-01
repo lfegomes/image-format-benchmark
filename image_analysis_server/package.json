@@ -1,17 +1,20 @@
 {
-  "name": "image_analysis_server",
+  "name": "image-analysis-server",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "private": true,
+  "description": "Servidor HTTP local estático para o benchmark de formato/qualidade/resolução de imagens (TCC).",
+  "type": "module",
+  "engines": {
+    "node": ">=22"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "scripts": {
+    "start": "tsx src/server.ts",
+    "build": "tsc --noEmit",
+    "test": "node --import tsx --test test/**/*.test.ts"
+  },
   "devDependencies": {
-    "@types/node": "^26.1.2",
-    "tsx": "^4.23.1",
-    "typescript": "^7.0.2"
+    "tsx": "4.23.1",
+    "typescript": "5.9.3",
+    "@types/node": "22.20.1"
   }
 }
