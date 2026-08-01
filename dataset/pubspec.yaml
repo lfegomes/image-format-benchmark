@@ -1,15 +1,18 @@
 name: dataset
-description: A sample command-line application.
-version: 1.0.0
-# repository: https://github.com/my_org/my_repo
+description: >
+  Preparador autônomo do dataset de benchmark: seleciona um subconjunto
+  determinístico de imagens de entrada e gera as variantes JPEG/WebP
+  (formato × qualidade × resolução) + manifest.json usadas pelo app e pelo
+  servidor do benchmark. Não depende de nenhum outro pacote deste
+  repositório.
+publish_to: 'none'
 
 environment:
   sdk: ^3.12.2
 
-# Add regular dependencies here.
 dependencies:
-  path: ^1.9.0
+  image: ^4.9.1
 
 dev_dependencies:
-  lints: ^6.0.0
-  test: ^1.25.6
+  test: ^1.25.0
+  path: ^1.9.0

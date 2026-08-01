@@ -1,3 +1,15 @@
-# https://dart.dev/tools/private-files
-# Created by `dart pub`
 .dart_tool/
+.DS_Store
+
+# Imagens de entrada fornecidas pelo usuário (grande, específico de cada
+# execução do preparador — não é código nem artefato reproduzível a partir
+# do código sozinho).
+/input/
+
+# Saída do preparador (manifest.json, source/, references/, variants/,
+# selected_images.txt): regenerável a partir de input/ via
+# `dart run bin/select_images.dart` e `dart run bin/prepare_dataset.dart`.
+/generated/
+
+# Binário nativo específico de SO/arquitetura — ver README para reobter.
+/bin/cwebp
