@@ -1,17 +1,46 @@
 # image_analysis_app
 
-A new Flutter project.
+Aplicativo Flutter de benchmark de formato/qualidade/resolução
+de imagens. Ver o README na raiz do repositório para o fluxo completo (dataset → servidor → app).
 
-## Getting Started
+## Requisitos
 
-This project is a starting point for a Flutter application.
+- Flutter 3.44.7 — mesma versão registrada em
+  `lib/benchmark/config/experiment_config.dart`
+  (`flutterVersionForRecordKeeping`), usada para identificar a versão do
+  Flutter nos resultados exportados. Se atualizar o SDK, atualize também
+  essa constante.
 
-A few resources to get you started if this is your first Flutter project:
+## Estrutura
 
-- [Learn Flutter](https://docs.flutter.dev/get-started/learn-flutter)
-- [Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Flutter learning resources](https://docs.flutter.dev/reference/learning-resources)
+```text
+lib/
+  main.dart, app.dart   # entrada e navegação
+  benchmark/
+    config/             # constantes e enums do experimento
+    models/                    
+    data/                      
+    network/            # download sem cache
+    decoding/           # decodificação cronometrada
+    quality/            # SSIM
+    stats/              # estatística e fronteira de Pareto
+    runner/             # orquestração das tarefas
+  presentation/         # 3 telas: setup, benchmark, results
+test/benchmark/           
+```
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Rodar o app
+
+```bash
+flutter run
+```
+
+Na tela de configuração, informe a URL-base do servidor (IPv4 do
+computador na mesma rede Wi-Fi, nunca `localhost` no celular), teste a conexão, carregue o manifesto e inicie o experimento.
+
+## Testes e análise estática
+
+```bash
+flutter test
+flutter analyze
+```

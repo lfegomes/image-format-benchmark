@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Permite tráfego HTTP não criptografado para TODOS os domínios.
+
+  Isto NÃO é uma prática recomendada para aplicativos de produção. Este é
+  um aplicativo experimental de pesquisa que precisa falar HTTP puro
+  (sem TLS) com um servidor estático rodando na mesma rede Wi-Fi local
+  durante a coleta de dados. Fora desse contexto de experimento
+  controlado, prefira HTTPS e uma configuração de rede restrita a
+  domínios específicos.
+-->
+<network-security-config>
+    <base-config cleartextTrafficPermitted="true" />
+</network-security-config>
